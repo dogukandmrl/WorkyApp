@@ -1,0 +1,65 @@
+<!-- res/layout/fragment_profile_edit.xml -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ProfileFragment">
+
+    <!-- Kullanıcı Adı Düzenleme -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kullanıcı Adı"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- E-posta Düzenleme -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-posta Adresi"
+        android:inputType="textEmailAddress"
+        android:maxLines="1" />
+
+    <!-- Profil Fotoğrafı Yükleme Butonu -->
+    <Button
+        android:id="@+id/btnUploadPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profil Fotoğrafını Yükle" />
+
+    <!-- Profil Fotoğrafı Görüntüleme -->
+    <ImageView
+        android:id="@+id/ivProfilePhoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/profilephoto" />
+
+    <!-- Kaydetme Butonu -->
+    <Button
+        android:id="@+id/btnSaveProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bilgileri Kaydet" />
+
+    <!-- Kaydedilen Kullanıcı Bilgilerini Göstermek için TextView'ler -->
+    <TextView
+        android:id="@+id/tvSavedUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kullanıcı Adı: " />
+
+    <TextView
+        android:id="@+id/tvSavedEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-posta: " />
+</LinearLayout>

@@ -1,0 +1,46 @@
+<!-- res/layout/fragment_social.xml -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Paylaşım Metni Girişi -->
+    <EditText
+        android:id="@+id/etPostText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Paylaşımınızı buraya yazın"
+        android:layout_margin="16dp"/>
+
+    <!-- Paylaşım Fotoğrafı -->
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPostText"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/selectimage"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <!-- Paylaşım Butonu -->
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paylaş"
+        android:layout_below="@id/ivPostImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Postları Gösteren RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnShare"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+</RelativeLayout>

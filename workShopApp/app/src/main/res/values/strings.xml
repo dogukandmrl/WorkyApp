@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">workShopApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="head_1">AŞÇILIK ATÖLYESİ</string>
+    <string name="head_2">BARİSTALIK ATÖLYESİ</string>
+    <string name="head_3">YAZILIM BOOTCAMPİ</string>
+    <string name="head_4">MİMARLIK ATÖLYESİ</string>
+    <string name="head_5">EL İŞİ ATÖLYESİ</string>
+    <string name="head_6">İLK YARDIM ATÖLYESİ</string>
+    <string name="head_7">ÇOCUKLAR İÇİN HOBİ ATÖLYESİ</string>
+    <string name="head_8">SİNEMA ATÖLYESİ</string>
+    <string name="head_9">TİYATRO ATÖLYESİ</string>
+    <string name="head_10">ÇÖMLEK ATÖLYESİ</string>
+</resources>
