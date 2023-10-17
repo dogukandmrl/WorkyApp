@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 
 public class ProfileFragment extends Fragment {
@@ -35,11 +36,24 @@ public class ProfileFragment extends Fragment {
     private static final String PREFS_NAME = "UserProfilePrefs";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_EMAIL = "email";
+    public static final String KEY_AGE = "age";
+    public static final String KEY_OCCUPATION = "occupation";
+    public static final String KEY_EDUCATION = "education";
+    public static final String KEY_GENDER = "gender";
+    public static final String KEY_HOBBIES = "hobbies";
+    public static final String KEY_ADDRESS = "address";
     private static final int REQUEST_IMAGE_PICK = 1;
     private static final int STORAGE_PERMISSION_CODE = 2;
+    private Uri selectedImageUri;
 
     private EditText etUsername;
     private EditText etEmail;
+    private EditText etAge;
+    private EditText etOccupation;
+    private EditText etEducation;
+    private EditText etGender;
+    private EditText etHobbies;
+    private EditText etAddress;
     private ImageView ivProfilePhoto;
     private Button btnSaveProfile;
     private SharedPreferences sharedPreferences;
@@ -52,16 +66,14 @@ public class ProfileFragment extends Fragment {
 
         etUsername = view.findViewById(R.id.etUsername);
         etEmail = view.findViewById(R.id.etEmail);
+        etAge = view.findViewById(R.id.etAge);
+        etOccupation = view.findViewById(R.id.etOccupation);
+        etEducation = view.findViewById(R.id.etEducation);
+        etGender = view.findViewById(R.id.etGender);
+        etHobbies = view.findViewById(R.id.etHobbies);
+        etAddress = view.findViewById(R.id.etAddress);
         ivProfilePhoto = view.findViewById(R.id.ivProfilePhoto);
         btnSaveProfile = view.findViewById(R.id.btnSaveProfile);
-
-
-        String savedUsername = sharedPreferences.getString(KEY_USERNAME, "");
-        String savedEmail = sharedPreferences.getString(KEY_EMAIL, "");
-
-
-        etUsername.setText(savedUsername);
-        etEmail.setText(savedEmail);
 
 
         ivProfilePhoto.setOnClickListener(new View.OnClickListener() {
@@ -83,26 +95,44 @@ public class ProfileFragment extends Fragment {
         btnSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Kullanıcıdan alınan bilgileri kaydet
                 String username = etUsername.getText().toString();
                 String email = etEmail.getText().toString();
+                String age = etAge.getText().toString();
+                String occupation = etOccupation.getText().toString();
+                String education = etEducation.getText().toString();
+                String gender = etGender.getText().toString();
+                String hobbies = etHobbies.getText().toString();
+                String address = etAddress.getText().toString();
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_USERNAME, username);
                 editor.putString(KEY_EMAIL, email);
+                editor.putString(KEY_AGE, age);
+                editor.putString(KEY_OCCUPATION, occupation);
+                editor.putString(KEY_EDUCATION, education);
+                editor.putString(KEY_GENDER, gender);
+                editor.putString(KEY_HOBBIES, hobbies);
+                editor.putString(KEY_ADDRESS, address);
                 editor.apply();
 
+                Intent intent = new Intent(getContext(), ProfileDetail.class);
+                intent.putExtra("username", username);
+                intent.putExtra("email", email);
 
-                TextView tvSavedUsername = view.findViewById(R.id.tvSavedUsername);
-                TextView tvSavedEmail = view.findViewById(R.id.tvSavedEmail);
+                intent.putExtra("age", age);
+                intent.putExtra("occupation", occupation);
+                intent.putExtra("education", education);
+                intent.putExtra("gender", gender);
+                intent.putExtra("hobbies", hobbies);
+                intent.putExtra("address", address);
 
+                if (selectedImageUri != null) {
 
-                String savedUsername = sharedPreferences.getString(KEY_USERNAME, "");
-                String savedEmail = sharedPreferences.getString(KEY_EMAIL, "");
+                    intent.putExtra("profilePhotoUri", selectedImageUri.toString());
+                }
 
+                startActivity(intent);
 
-                tvSavedUsername.setText("Kullanıcı Adı: " + savedUsername);
-                tvSavedEmail.setText("E-posta: " + savedEmail);
             }
         });
 
@@ -128,12 +158,17 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
             if (data != null) {
                 Uri selectedImageUri = data.getData();
+
+
+                SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserProfilePrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("profilePhotoUri", selectedImageUri.toString());
+                editor.apply();
 
                 ivProfilePhoto.setImageURI(selectedImageUri);
             }

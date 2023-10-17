@@ -8,7 +8,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -72,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.workShopFrameLayout, fragment);
         fragmentTransaction.commit();
     }
+
+
 }

@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,9 +16,10 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.ArrayList;
 
-public class WorkShopAdapter extends RecyclerView.Adapter<WorkShopAdapter.WsViewHolder> {
+public class WorkShopAdapter extends RecyclerView.Adapter<WorkShopAdapter.WsViewHolder>{
     Context context;
     ArrayList<Workshops> workshopsArrayList;
+
     private OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -26,9 +29,11 @@ public class WorkShopAdapter extends RecyclerView.Adapter<WorkShopAdapter.WsView
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
     public WorkShopAdapter(Context context, ArrayList<Workshops> workshopsArrayList) {
         this.context = context;
         this.workshopsArrayList = workshopsArrayList;
+
     }
 
     @NonNull

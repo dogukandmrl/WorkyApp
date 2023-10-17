@@ -27,14 +27,59 @@
         android:hint="E-posta Adresi"
         android:inputType="textEmailAddress"
         android:maxLines="1" />
-
-    <!-- Profil Fotoğrafı Yükleme Butonu -->
-    <Button
-        android:id="@+id/btnUploadPhoto"
-        android:layout_width="wrap_content"
+    <!-- Yaş Düzenleme -->
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profil Fotoğrafını Yükle" />
+        android:hint="Yaş"
+        android:inputType="number"
+        android:maxLines="1" />
 
+    <!-- Meslek Düzenleme -->
+    <EditText
+        android:id="@+id/etOccupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Meslek"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- Eğitim Durumu Düzenleme -->
+    <EditText
+        android:id="@+id/etEducation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Eğitim Durumu"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- Cinsiyet Düzenleme -->
+    <EditText
+        android:id="@+id/etGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cinsiyet"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- Hobiler Düzenleme -->
+    <EditText
+        android:id="@+id/etHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hobiler"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <!-- Adres Düzenleme -->
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adres"
+        android:inputType="text"
+        android:maxLines="1" />
     <!-- Profil Fotoğrafı Görüntüleme -->
     <ImageView
         android:id="@+id/ivProfilePhoto"
@@ -50,16 +95,5 @@
         android:layout_height="wrap_content"
         android:text="Bilgileri Kaydet" />
 
-    <!-- Kaydedilen Kullanıcı Bilgilerini Göstermek için TextView'ler -->
-    <TextView
-        android:id="@+id/tvSavedUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kullanıcı Adı: " />
 
-    <TextView
-        android:id="@+id/tvSavedEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-posta: " />
 </LinearLayout>
