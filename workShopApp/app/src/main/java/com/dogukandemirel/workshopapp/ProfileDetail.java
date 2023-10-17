@@ -25,7 +25,7 @@ public class ProfileDetail extends AppCompatActivity {
         String education = sharedPreferences.getString("education", "");
         String gender = sharedPreferences.getString("gender", "");
         String hobbies = sharedPreferences.getString("hobbies", "");
-        String address = sharedPreferences.getString("address", "");
+
 
         TextView tvUsername = findViewById(R.id.tvUsername);
         TextView tvEmail = findViewById(R.id.tvEmail);
@@ -34,7 +34,7 @@ public class ProfileDetail extends AppCompatActivity {
         TextView tvEducation = findViewById(R.id.tvEducation);
         TextView tvGender = findViewById(R.id.tvGender);
         TextView tvHobbies = findViewById(R.id.tvHobbies);
-        TextView tvAddress = findViewById(R.id.tvAddress);
+
 
         tvUsername.setText("Kullanıcı Adı: " + username);
         tvEmail.setText("E-posta: " + email);
@@ -43,7 +43,6 @@ public class ProfileDetail extends AppCompatActivity {
         tvEducation.setText("Eğitim Durumu: " + education);
         tvGender.setText("Cinsiyet: " + gender);
         tvHobbies.setText("Hobiler: " + hobbies);
-        tvAddress.setText("Adres: " + address);
 
 
 

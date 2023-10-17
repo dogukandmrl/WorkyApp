@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ProfileFragment">
+    tools:context=".ProfileFragment"
+    android:background="@drawable/wave__2_">
 
     <!-- Kullanıcı Adı Düzenleme -->
     <EditText
@@ -17,7 +18,10 @@
         android:layout_height="wrap_content"
         android:hint="Kullanıcı Adı"
         android:inputType="text"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <!-- E-posta Düzenleme -->
     <EditText
@@ -26,15 +30,41 @@
         android:layout_height="wrap_content"
         android:hint="E-posta Adresi"
         android:inputType="textEmailAddress"
-        android:maxLines="1" />
-    <!-- Yaş Düzenleme -->
-    <EditText
-        android:id="@+id/etAge"
+        android:maxLines="1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <!-- Yaş ve Cinsiyet Düzenleme (Side by Side) -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Yaş"
-        android:inputType="number"
-        android:maxLines="1" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Yaş"
+            android:inputType="number"
+            android:maxLines="1"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Cinsiyet"
+            android:inputType="text"
+            android:maxLines="1"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- Meslek Düzenleme -->
     <EditText
@@ -43,7 +73,10 @@
         android:layout_height="wrap_content"
         android:hint="Meslek"
         android:inputType="text"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <!-- Eğitim Durumu Düzenleme -->
     <EditText
@@ -52,16 +85,10 @@
         android:layout_height="wrap_content"
         android:hint="Eğitim Durumu"
         android:inputType="text"
-        android:maxLines="1" />
-
-    <!-- Cinsiyet Düzenleme -->
-    <EditText
-        android:id="@+id/etGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cinsiyet"
-        android:inputType="text"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
     <!-- Hobiler Düzenleme -->
     <EditText
@@ -70,16 +97,13 @@
         android:layout_height="wrap_content"
         android:hint="Hobiler"
         android:inputType="text"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-    <!-- Adres Düzenleme -->
-    <EditText
-        android:id="@+id/etAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Adres"
-        android:inputType="text"
-        android:maxLines="1" />
+
+
     <!-- Profil Fotoğrafı Görüntüleme -->
     <ImageView
         android:id="@+id/ivProfilePhoto"
@@ -93,7 +117,10 @@
         android:id="@+id/btnSaveProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bilgileri Kaydet" />
-
+        android:text="Bilgileri Kaydet"
+        android:backgroundTint="#0ED6B9"
+        android:textColor="#FFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
 </LinearLayout>

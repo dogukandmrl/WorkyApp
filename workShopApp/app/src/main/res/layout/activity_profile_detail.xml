@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ProfileDetail">
+    tools:context=".ProfileDetail"
+    android:background="@drawable/wave__2_">
 
     <ImageView
         android:id="@+id/ivProfilePhoto"
@@ -19,42 +20,60 @@
 
     <TextView
         android:id="@+id/tvUsername"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvEmail"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvAge"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvOccupation"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvEducation"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvGender"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvHobbies"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    />
 
 </LinearLayout>

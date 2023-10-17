@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
     public static final String KEY_EDUCATION = "education";
     public static final String KEY_GENDER = "gender";
     public static final String KEY_HOBBIES = "hobbies";
-    public static final String KEY_ADDRESS = "address";
+
     private static final int REQUEST_IMAGE_PICK = 1;
     private static final int STORAGE_PERMISSION_CODE = 2;
     private Uri selectedImageUri;
@@ -53,7 +53,6 @@ public class ProfileFragment extends Fragment {
     private EditText etEducation;
     private EditText etGender;
     private EditText etHobbies;
-    private EditText etAddress;
     private ImageView ivProfilePhoto;
     private Button btnSaveProfile;
     private SharedPreferences sharedPreferences;
@@ -71,7 +70,6 @@ public class ProfileFragment extends Fragment {
         etEducation = view.findViewById(R.id.etEducation);
         etGender = view.findViewById(R.id.etGender);
         etHobbies = view.findViewById(R.id.etHobbies);
-        etAddress = view.findViewById(R.id.etAddress);
         ivProfilePhoto = view.findViewById(R.id.ivProfilePhoto);
         btnSaveProfile = view.findViewById(R.id.btnSaveProfile);
 
@@ -102,7 +100,6 @@ public class ProfileFragment extends Fragment {
                 String education = etEducation.getText().toString();
                 String gender = etGender.getText().toString();
                 String hobbies = etHobbies.getText().toString();
-                String address = etAddress.getText().toString();
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_USERNAME, username);
@@ -112,7 +109,6 @@ public class ProfileFragment extends Fragment {
                 editor.putString(KEY_EDUCATION, education);
                 editor.putString(KEY_GENDER, gender);
                 editor.putString(KEY_HOBBIES, hobbies);
-                editor.putString(KEY_ADDRESS, address);
                 editor.apply();
 
                 Intent intent = new Intent(getContext(), ProfileDetail.class);
@@ -124,7 +120,7 @@ public class ProfileFragment extends Fragment {
                 intent.putExtra("education", education);
                 intent.putExtra("gender", gender);
                 intent.putExtra("hobbies", hobbies);
-                intent.putExtra("address", address);
+
 
                 if (selectedImageUri != null) {
 
